@@ -32,7 +32,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN echo "test webpage" > /opt/app/index.html
 #RUN chcon -R -t httpd_sys_content_t .
 #RUN chown -R default:root .
-RUN chmod 777 -R /var/www/html/
+RUN mkdir -p /var/www/html/htdocs/ && chmod 775 -R /var/www/html/htdocs/
 # Run as non-root user
  #USER default
 
