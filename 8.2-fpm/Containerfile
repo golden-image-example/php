@@ -5,8 +5,8 @@ FROM php:8.2-fpm
 USER root
 RUN mkdir -p /opt/app/htdocs && mkdir -p /opt/app/private
 # We'll populate these in a PVC that will be shared
-#ADD htdocs/ /opt/app/htdocs/
-ADD private/ /opt/app/private/
+# ADD htdocs/ /opt/app/htdocs/
+# ADD private/ /opt/app/private/
 
 # Install system dependencies
 RUN apt-get update -y && apt-get install -y default-mysql-client libfreetype6-dev libjpeg62-turbo-dev libpng-dev libzip-dev vim git unzip
@@ -24,10 +24,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Copy the application code from the relative path of Dockerfile to the working directory
 
 
-COPY composer.json .
-COPY composer.lock .
-#COPY httpd.conf /etc/httpd/conf/httpd.conf
-#COPY info.php /opt/app/info.php
+# COPY composer.json .
+# COPY composer.lock .
+# COPY httpd.conf /etc/httpd/conf/httpd.conf
+# COPY info.php /opt/app/info.php
 
 RUN echo "test webpage" > /opt/app/index.html
 #RUN chcon -R -t httpd_sys_content_t .
@@ -40,7 +40,7 @@ RUN chmod 775 -R /var/www/html/
 
 
 # Install PHP dependencies, ignoring platform reqs
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+# RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
 
 
