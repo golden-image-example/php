@@ -36,7 +36,7 @@ RUN chmod 775 -R /var/www/html/
 # Run as non-root user
  #USER default
 
-RUN mkdir /.composer && chmod 777 -r /.composer
+RUN mkdir /.composer && chmod 777 -R /.composer
 
 
 # Install PHP dependencies, ignoring platform reqs
