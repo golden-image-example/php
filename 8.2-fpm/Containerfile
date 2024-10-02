@@ -9,7 +9,7 @@ RUN mkdir -p /opt/app/htdocs && mkdir -p /opt/app/private
 # ADD private/ /opt/app/private/
 
 # Install system dependencies
-RUN apt-get update -y && apt-get install -y default-mysql-client libfreetype6-dev libjpeg62-turbo-dev libpng-dev libzip-dev vim git unzip
+RUN apt-get update -y && apt-get install -y default-mysql-client libfreetype6-dev libjpeg62-turbo-dev libpng-dev libzip-dev vim git unzip gd
     #freetype \
     #libjpeg-turbo \
    # libpng \
